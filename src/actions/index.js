@@ -5,6 +5,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = 'CLEAR_DISPLAY';
 export const MEM_ADD = 'MEM_ADD';
 export const MEM_R = 'MEM_R';
+export const MEM_C = 'MEM_C';
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -28,4 +29,8 @@ export const memAdd = (val) => {
 
 export const memR = (memVal) => {
     return({type: MEM_R, payload:memVal});
+}
+
+export const memC = () => {
+    return ({ type: MEM_C });
 }
