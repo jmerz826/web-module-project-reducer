@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState } from '../reducers';
 
-import { applyNumber, addOne, changeOperation, clearDisplay, memAdd } from '../actions';
+import { applyNumber, addOne, changeOperation, clearDisplay, memAdd, memR } from '../actions';
 
 import './App.css';
 
@@ -31,6 +31,10 @@ function App() {
     dispatch(memAdd());
   }
 
+  const handleMemR = (tot) => {
+    dispatch(memR(tot));
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -49,7 +53,7 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemAdd}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={() => {handleMemR(state.memory)}}/>
               <CalcButton value={"MC"}/>
             </div>
 
